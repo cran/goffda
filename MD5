@@ -1,6 +1,6 @@
-54b9da49f6c2fefc2f625611e7da66ad *DESCRIPTION
+c6ddadf669d96cddfed4e4585cd83d2c *DESCRIPTION
 6528fa1c2cd8f693068caeeb0ebee8ee *NAMESPACE
-33baeabd2d1ba6e029fb1976d9fc67d6 *NEWS.md
+712c5152376f06e5c7627ff65de37c6a *NEWS.md
 bd9f784c16e5dcf9990dc648d2eae028 *R/RcppExports.R
 11d9539b3cb54f437d5803be69a27ec1 *R/auxiliary.R
 d02d1087a06f40669df8ee70ace7c8a9 *R/cv_glmnet.R
@@ -21,12 +21,12 @@ b7e89098a70c5fd0ea27c9de8655f179 *man/fda.usc_efic.Rd
 253d54540d67d7f60e4e8eeae4f8145d *man/flm_est.Rd
 dff8d16fa390eab72ca0de76a4307d21 *man/flm_stat.Rd
 ebec87b3e915535ed35d70583f90e612 *man/flm_term.Rd
-216b44752ae2fa8b71b62cba81a6c562 *man/flm_test.Rd
+ec251efe018ce0e398e238db383f5e5e *man/flm_test.Rd
 a28ba6deee90bba048e563e497e6d6ec *man/fpc.Rd
 c0154233a41c3610105caa84e754df24 *man/fpc_utils.Rd
 28d8de7806dfcee960a8208548200d1c *man/goffda-package.Rd
 4e7f5bc45ede02c1ad99cbc94dbaf882 *man/ontario.Rd
-1dab355e58c329886f5d8ad94d30cfcb *man/quadrature.Rd
+a437a739c11404913cdd92b3b6494fce *man/quadrature.Rd
 98040baecb3fb72b099ce14fcbab8583 *man/r_ou.Rd
 15b749f0a3ce38a0cec276164aa29ba9 *man/sim-frmfr.Rd
 e439acc75f6b31b8c52fa4db6dfc6342 *src/Makevars
