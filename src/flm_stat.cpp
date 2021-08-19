@@ -30,7 +30,7 @@ using namespace Rcpp;
 //' \eqn{\sum_{r = 1}^n A_{ijr}}, for \eqn{A_{ijr}} depending on
 //' \eqn{(\mathbf{x}_{i,p}, \mathbf{x}_{j,p}, \mathbf{x}_{r,p})}{
 //' (x_{i, p}, x_{j, p}, x_{r, p})}. Its exact expression can be seen in
-//' Escanciano (2006) and García-Portugués et al. (2019).
+//' Escanciano (2006) and García-Portugués et al. (2021).
 //'
 //' @param E the matrix of multivariate residuals, with dimension
 //' \code{c(n, q)}. A vector if \eqn{q = 1}.
@@ -60,7 +60,7 @@ using namespace Rcpp;
 //'
 //' The implementation of the PCvM test statistic for scalar response is
 //' addressed in García-Portugués et al. (2014), whereas García-Portugués et al.
-//' (2019) presents its multivariate extension and shows that
+//' (2021) presents its multivariate extension and shows that
 //' \eqn{\mathbf{A}_\bullet}{A_\bullet} induces a weighted quadratic norm (if
 //' there are no repetitions in the sample). The PCvM statistic is rooted in
 //' the proposal by Escanciano (2006).
@@ -68,18 +68,18 @@ using namespace Rcpp;
 //' Both \code{flm_stat} and \code{A_dot} are coded in C++.
 //' @references
 //' García-Portugués, E., Álvarez-Liébana, J., Álvarez-Pérez, G. and
-//' González-Manteiga, W. (2019). A goodness-of-fit test for the functional
-//' linear model with functional response. \emph{arXiv:1909.07686}.
-//' \url{https://arxiv.org/abs/1909.07686}
+//' Gonzalez-Manteiga, W. (2021). A goodness-of-fit test for the functional
+//' linear model with functional response. \emph{Scandinavian Journal of
+//' Statistics}, 48(2):502--528. \doi{10.1111/sjos.12486}
 //'
 //' Escanciano, J. C. (2006) A consistent diagnostic test for regression
 //' models using projections. \emph{Econometric Theory}, 22(6):1030–-1051.
-//' \url{https://doi.org/10.1017/S0266466606060506}
+//' \doi{10.1017/S0266466606060506}
 //'
 //' García-Portugués, E., González-Manteiga, W. and Febrero-Bande, M. (2014). A
 //' goodness-of-fit test for the functional linear model with scalar response.
 //' \emph{Journal of Computational and Graphical Statistics}, 23(3):761--778.
-//' \url{http://doi.org/10.1080/10618600.2013.812519}
+//' \doi{10.1080/10618600.2013.812519}
 //' @examples
 //' ## flm_stat
 //'
@@ -162,7 +162,7 @@ double flm_stat(arma::mat E, int p, arma::vec Adot_vec, bool constant = true) {
   double c = 1;
   if (constant) {
 
-    c = (2 * std::pow(PI, 0.5 * (p + q) - 1)) /
+    c = (2 * std::pow(M_PI, 0.5 * (p + q) - 1)) /
       (q * R::gammafn(0.5 * p) * R::gammafn(0.5 * q) * n * n);
 
   }
@@ -225,7 +225,7 @@ arma::vec Adot(arma::mat X) {
   arma::vec Adot_vec = arma::zeros(n * (n - 1) / 2 + 1);
 
   // The first element of Adot_vec is the common diagonal element
-  Adot_vec[0] = PI * (n + 1);
+  Adot_vec[0] = M_PI * (n + 1);
 
   // Loop on the rest of the elements are the lower triangle matrix of Adot
   for (arma::uword i = 2; i <= n; i++) {
@@ -239,7 +239,7 @@ arma::vec Adot(arma::mat X) {
         if ((i == r) | (j == r)) {
 
           // Sum variable
-          sum_r += PI;
+          sum_r += M_PI;
 
         } else {
 
